@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="menghitung pengeluaran keluarga">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="canonical" href="https://www.example.com/">
+    <title>hitungin</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="a.html">A</a>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1>Pengeluaran Keluarga</h1>
+            <p>hitung pengeluaran keluarga dengan mudah</p>
+            <div class="saldo"></div>
+            <section>
+                <h2>pengeluaran harian</h2>
+                <form id="tambahTransaksi">
+                    <label for="tanggal">Tanggal:</label>
+                    <input type="date" id="tanggal" name="tanggal" placeholder="Tanggal">
+                    <label for="deskripsi">Deskripsi:</label>
+                    <input type="text" id="deskripsi" name="deskripsi" placeholder="Deskripsi">
+                    <label for="jumlah">Jumlah:</label>
+                    <input type="number" id="jumlah" name="jumlah" placeholder="Jumlah">
+                    <button type="button" id="button_tambah">Tambah</button>
+                </form>
+
+                </tr>
+                <table cellspacing="0" cellpadding="3" border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tanggal</th>
+                            <th>Deskripsi</th>
+                            <th>Jumlah</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pengeluaran-harian">
+                        <!-- Data pengeluaran harian akan ditambahkan di sini -->
+                    </tbody>
+                </table>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2024 hitungin. All rights reserved.</p>
+    </footer>
+    <script src="a.js"></script>
+</body>
+</html>
