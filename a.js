@@ -3,28 +3,47 @@ function saveTransaksi() {
     const data = JSON.stringify(transaksi);
     localStorage.setItem("transaksi", data);
 }
-function loadTransaksi() {
-    const localData = localStorage.getItem("transaksi");
-    if (localData) {
-        transaksi = JSON.parse(localData);
+async function loadTransaksi() {
+    try {
+        const response = await fetch("http://127.0.0.1:3000/transaksi");
+        if (!response.ok) {
+            throw new Error("gaga memuat data");
+        }
+        transaksi = await response.json();
+        console.log(transaksi);
+    } catch (error) {
+        console.error(error);
     }
 }
+
 function getID() {
     let lastId = transaksi.findLast((item) => item.id);
     return lastId ? lastId.id + 1 : 1;
 }
-function tambahTransaksi(tanggal, deskripsi, tipe, jumlah) {
-    lastId = getID();
-    transaksi.push({
-        id: lastId,
-        tanggal: tanggal,
-        deskripsi: deskripsi,
-        tipe: tipe,
-        jumlah: jumlah,
-    });
-    saveTransaksi();
-    showTransaksi();
-    showSaldo();
+async function tambahTransaksi(tanggal, deskripsi, tipe, jumlah) {
+    try {
+        const response = await fetch("http://127.0.0.1:3000/transaksi", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                tanggal: tanggal,
+                deskripsi: deskripsi,
+                tipe: tipe,
+                jumlah: jumlah,
+            }),
+        });
+        if (!response.ok) {
+            throw new Error("gaga memuat data");
+        }
+        const data = await response.json();
+        transaksi.push(data);
+        showTransaksi();
+        showSaldo();
+    } catch (error) {
+        console.error(error);
+    }
 }
 const tombolFilter = document.getElementById("filterTipe");
 tombolFilter.addEventListener("change", showTransaksi);

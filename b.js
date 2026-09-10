@@ -106,3 +106,7 @@ async function getDisplay() {
         pic anda adalah ${pic}
         `);
 }
+export function saveTransaksi() {
+    const data = JSON.stringify(transaksi);
+    localStorage.setItem("transaksi", data);
+}
