@@ -1,8 +1,4 @@
 let transaksi = [];
-function saveTransaksi() {
-    const data = JSON.stringify(transaksi);
-    localStorage.setItem("transaksi", data);
-}
 async function loadTransaksi() {
     try {
         const response = await fetch("http://127.0.0.1:3000/transaksi");
@@ -19,10 +15,18 @@ async function loadTransaksi() {
 }
 
 function getID() {
-    let lastId = transaksi.findLast((item) => item.id);
-    return lastId ? lastId.id + 1 : 1;
+    const validIds = transaksi
+        .map((item) => Number(item.id))
+        .filter((num) => !isNaN(num) && num > 0);
+
+    if (validIds.length === 0) {
+        return 1;
+    }
+
+    return Math.max(...validIds) + 1;
 }
 async function tambahTransaksi(tanggal, deskripsi, tipe, jumlah) {
+    const id = getID();
     try {
         const response = await fetch("http://127.0.0.1:3000/transaksi", {
             method: "POST",
@@ -30,6 +34,7 @@ async function tambahTransaksi(tanggal, deskripsi, tipe, jumlah) {
                 "content-type": "application/json",
             },
             body: JSON.stringify({
+                id: id,
                 tanggal: tanggal,
                 deskripsi: deskripsi,
                 tipe: tipe,
@@ -89,6 +94,7 @@ function showTransaksi() {
         baris.appendChild(kolom5);
         baris.appendChild(kolom6);
         const buttonHapus = document.createElement("button");
+        buttonHapus.type = "button";
         buttonHapus.id = filteredTransaksi[id].id;
         buttonHapus.textContent = "Hapus";
         buttonHapus.addEventListener("click", hapusTransaksi);
@@ -99,11 +105,24 @@ function showTransaksi() {
     }
 }
 async function hapusTransaksi(event) {
+    event.preventDefault();
     const id = event.target.id;
     try {
         const response = await fetch("http://127.0.0.1:3000/transaksi/" + id, {
             method: "DELETE",
         });
+        if (!response.ok) {
+            throw new Error("gagal hapus");
+        }
+        const index = transaksi.findIndex(function (item) {
+            return item.id == id;
+        });
+
+        if (index !== -1) {
+            transaksi.splice(index, 1);
+            showTransaksi();
+            showSaldo();
+        }
     } catch (error) {
         console.error(error);
     }
@@ -112,10 +131,13 @@ async function hapusTransaksi(event) {
 const formTransaksi = document.getElementById("tambahTransaksi");
 formTransaksi.addEventListener("submit", function (event) {
     event.preventDefault();
+    event.stopPropagation();
+
     let tanggal = document.getElementById("tanggal").value;
     let deskripsi = document.getElementById("deskripsi").value;
     let tipe = document.getElementById("tipe").value;
     let jumlah = Number(document.getElementById("jumlah").value);
+
     if (validasiInput(tanggal, deskripsi, tipe, jumlah)) {
         tambahTransaksi(tanggal, deskripsi, tipe, jumlah);
     }
