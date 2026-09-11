@@ -11,6 +11,8 @@ async function loadTransaksi() {
         }
         transaksi = await response.json();
         console.log(transaksi);
+        showTransaksi();
+        showSaldo();
     } catch (error) {
         console.error(error);
     }
@@ -96,17 +98,17 @@ function showTransaksi() {
         daftarTransaksi.appendChild(baris);
     }
 }
-function hapusTransaksi(event) {
-    const index = transaksi.findIndex(function (item) {
-        return item.id == event.target.id;
-    });
-    if (index !== -1) {
-        transaksi.splice(index, 1);
-        saveTransaksi();
-        showTransaksi();
-        showSaldo();
+async function hapusTransaksi(event) {
+    const id = event.target.id;
+    try {
+        const response = await fetch("http://127.0.0.1:3000/transaksi/" + id, {
+            method: "DELETE",
+        });
+    } catch (error) {
+        console.error(error);
     }
 }
+
 const formTransaksi = document.getElementById("tambahTransaksi");
 formTransaksi.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -146,6 +148,4 @@ function validasiInput(tanggal, deskripsi, tipe, jumlah) {
 }
 document.addEventListener("DOMContentLoaded", function () {
     loadTransaksi();
-    showTransaksi();
-    showSaldo();
 });

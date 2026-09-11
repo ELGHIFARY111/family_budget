@@ -1,11 +1,54 @@
 {
-    "transaksi": [
-        {
-            "id": "1",
-            "tanggal": "2026-09-10",
-            "deskripsi": "Makan",
-            "tipe": "pengeluaran",
-            "jumlah": 222
-        }
-    ]
+  "transaksi": [
+    {
+      "tanggal": "2026-09-11",
+      "deskripsi": "wewqe",
+      "tipe": "pendapatan",
+      "jumlah": 11,
+      "id": "hI23jL64Lxg"
+    },
+    {
+      "tanggal": "2026-09-10",
+      "deskripsi": "dsd",
+      "tipe": "pendapatan",
+      "jumlah": 1,
+      "id": "nAnHQKa1AAg"
+    },
+    {
+      "tanggal": "2026-09-11",
+      "deskripsi": "dsd",
+      "tipe": "pendapatan",
+      "jumlah": 1,
+      "id": "YBbObuOHazo"
+    },
+    {
+      "tanggal": "2026-09-24",
+      "deskripsi": "dsd",
+      "tipe": "pendapatan",
+      "jumlah": 1,
+      "id": "X2I2UT1WHLI"
+    },
+    {
+      "tanggal": "2026-09-24",
+      "deskripsi": "dsdsa",
+      "tipe": "pendapatan",
+      "jumlah": 111,
+      "id": "-Ng7DQfCACo"
+    },
+    {
+      "tanggal": "2026-09-10",
+      "deskripsi": "dsad",
+      "tipe": "pendapatan",
+      "jumlah": 11,
+      "id": "D-fct1iX3UA"
+    },
+    {
+      "tanggal": "2026-09-10",
+      "deskripsi": "sdad",
+      "tipe": "pendapatan",
+      "jumlah": 111,
+      "id": "9tjTsQEeX-k"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
