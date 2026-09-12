@@ -1,90 +1,6 @@
 {
   "transaksi": [
     {
-      "id": "NZvxiZSURFw",
-      "tanggal": "2026-09-15",
-      "deskripsi": "dsds",
-      "tipe": "pendapatan",
-      "jumlah": 343443
-    },
-    {
-      "id": "jVPjMGfYBs4",
-      "tanggal": "2026-09-17",
-      "deskripsi": "dssdd",
-      "tipe": "pendapatan",
-      "jumlah": 4343434
-    },
-    {
-      "id": "mMbUvLCgq7M",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "kEgRfFfwMZI",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "dtewWx0fqz0",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "V0-rwLCbVFA",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "QZg827M-OQY",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "E9A3KvU9PwE",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "QTjOSG7h2js",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "mcWehniUXjY",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "rkzAPYCpydQ",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
-      "id": "VhV0QEfCV3c",
-      "tanggal": "2026-09-11",
-      "deskripsi": "dsd",
-      "tipe": "pendapatan",
-      "jumlah": 455
-    },
-    {
       "id": "2Un8V66e_po",
       "tanggal": "2026-09-10",
       "deskripsi": "sdsds",
@@ -161,6 +77,76 @@
       "deskripsi": "dsd",
       "tipe": "pendapatan",
       "jumlah": 2323
+    },
+    {
+      "id": 1,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 2,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 3,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 4,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 5,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 6,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 7,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 8,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 9,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
+    },
+    {
+      "id": 10,
+      "tanggal": "2026-09-02",
+      "deskripsi": "asdsa",
+      "tipe": "pendapatan",
+      "jumlah": 4342
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

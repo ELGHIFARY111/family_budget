@@ -1,7 +1,7 @@
 let transaksi = [];
 async function loadTransaksi() {
     try {
-        const response = await fetch("http://127.0.0.1:3000/transaksi");
+        const response = await fetch("http://localhost:3000/transaksi");
         if (!response.ok) {
             throw new Error("gaga memuat data");
         }
@@ -28,7 +28,7 @@ function getID() {
 async function tambahTransaksi(tanggal, deskripsi, tipe, jumlah) {
     const id = getID();
     try {
-        const response = await fetch("http://127.0.0.1:3000/transaksi", {
+        const response = await fetch("http://localhost:3000/transaksi", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -108,7 +108,7 @@ async function hapusTransaksi(event) {
     event.preventDefault();
     const id = event.target.id;
     try {
-        const response = await fetch("http://127.0.0.1:3000/transaksi/" + id, {
+        const response = await fetch("http://localhost:3000/transaksi/" + id, {
             method: "DELETE",
         });
         if (!response.ok) {
