@@ -3,7 +3,7 @@ async function loadTransaksi() {
     try {
         const response = await fetch("http://localhost:3000/transaksi");
         if (!response.ok) {
-            throw new Error("gaga memuat data");
+            throw new Error("gagal memuat data");
         }
         transaksi = await response.json();
         console.log(transaksi);
